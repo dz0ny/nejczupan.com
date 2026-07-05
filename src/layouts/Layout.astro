@@ -1,0 +1,66 @@
+---
+import "../index.css";
+import { Font } from "astro:assets";
+import { Schema } from "astro-seo-schema";
+import type { Thing, WithContext } from "schema-dts";
+
+interface Props {
+	title?: string;
+	description?: string;
+	noindex?: boolean;
+	socialImageUrl?: string;
+	schema?: WithContext<Thing> | WithContext<Thing>[];
+}
+
+// Site-wide defaults
+const SITE_NAME = "Neyts Zupan";
+const SITE_DESCRIPTION = "Helping you grow your code and business.";
+
+const { url } = Astro;
+const {
+	title: pageTitle,
+	description = SITE_DESCRIPTION,
+	noindex = false,
+	socialImageUrl,
+	schema,
+} = Astro.props;
+
+// Construct uniform title: "Page Title | Site Name" or just "Site Name"
+const title = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={url.href} />
+    <Font cssVariable="--font-sora" preload />
+    <Font cssVariable="--font-body" preload />
+    <Font cssVariable="--font-jetbrains" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url.href} />
+    <meta property="og:type" content="website" />
+    {socialImageUrl && (
+      <meta property="og:image" content={socialImageUrl} />
+      <meta property="og:image:alt" content={title} />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
+    {schema && (Array.isArray(schema)
+      ? schema.map((s) => <Schema item={s} />)
+      : <Schema item={schema} />
+    )}
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,20 @@
+# Neyts Zupan
+
+> Nejc "Neyts" Zupan — software developer and founder. Helping you grow your code and business.
+
+## Overview
+
+Personal site of Nejc Zupan (Neyts Zupan). Geek since he was able to walk,
+bootstrapped and powered by Open Source. Available to help with Python, Web,
+Security, CI/CD and SaaS.
+
+## Key Pages
+
+- [Home](/)
+
+## Contact
+
+- Website: https://nejczupan.com
+- X: https://x.com/nzupan
+- GitHub: https://github.com/zupo
+- LinkedIn: https://www.linkedin.com/in/nzupan/
