@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "hakuto": {
+      "source": {
+        "source": "github",
+        "repo": "teamniteo/hakuto"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "hakuto@hakuto": true
+  }
+}

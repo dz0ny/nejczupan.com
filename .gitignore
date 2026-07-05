@@ -19,7 +19,8 @@ dist-ssr
 .astro
 .osgrep
 .hakuto
-.claude
+.claude/*
+!.claude/settings.json
 .ports
 
 # Editor directories and files
