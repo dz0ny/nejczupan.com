@@ -4,7 +4,7 @@ import { Picture } from "astro:assets";
 import portrait from "@/assets/nejc.jpg";
 import type { Person } from "schema-dts";
 
-const NAME = "Nejc Zupan";
+const NAME = "Neyts Zupan";
 const TAGLINE = "Helping you grow your code and business.";
 const BIO =
   "Geek since I was able to walk. Bootstrapped & powered by Open Source. Can help you with anything Python, Web, Security, CI/CD and SaaS.";
@@ -36,8 +36,8 @@ const socials = [
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Nejc Zupan",
-  alternateName: "Neyts Zupan",
+  name: "Neyts Zupan",
+  alternateName: "Nejc Zupan",
   description: BIO,
   url: Astro.site?.href ?? Astro.url.origin,
   jobTitle: "Software developer & founder",
@@ -76,7 +76,7 @@ const personSchema = {
         <span class="h-3 w-3 rounded-full bg-[#FF5F57]"></span>
         <span class="h-3 w-3 rounded-full bg-[#FEBC2E]"></span>
         <span class="h-3 w-3 rounded-full bg-[#28C840]"></span>
-        <span class="ml-3 font-mono text-xs text-muted-foreground">nejc@zupan: ~</span>
+        <span class="ml-3 font-mono text-xs text-muted-foreground">neyts@zupan: ~</span>
       </div>
 
       {/* Body */}
@@ -92,7 +92,7 @@ const personSchema = {
           >
             <Picture
               src={portrait}
-              alt="Portrait of Nejc Zupan"
+              alt="Portrait of Neyts Zupan"
               formats={["webp"]}
               widths={[128, 256]}
               width={128}
@@ -109,7 +109,7 @@ const personSchema = {
               {NAME}
             </h1>
             <p class="animate-rise mt-1 font-mono text-sm text-muted-foreground [animation-delay:240ms]">
-              <span class="text-accent">//</span> Neyts Zupan
+              <span class="text-accent">//</span> Nejc Zupan
             </p>
             <p class="animate-rise mt-3 font-medium text-primary [animation-delay:280ms]">
               {TAGLINE}
